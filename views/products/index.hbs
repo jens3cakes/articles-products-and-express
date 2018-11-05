@@ -1,0 +1,8 @@
+<ul>Products
+  {{#each allProducts}}
+  <li><a href="/products/{{id}}">{{name}}</a></li>
+  <li>{{price}}</li>
+  <li>{{brand}}</li>
+  {{/each}}
+</ul>
+<a href="/products/new">Add new product</a>

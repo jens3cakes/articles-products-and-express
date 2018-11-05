@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/jens3cakes/articles-products-and-express#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "superagent": "^4.0.0-beta.5"
   }
 }
