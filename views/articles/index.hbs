@@ -1,0 +1,8 @@
+<ul>Articles
+  {{#each allArticles}}
+  <li><a href="/articles/{{id}}">{{title}}</a></li>
+  <li>{{author}}</li>
+  <li>{{urlTitle}}</li>
+  {{/each}}
+</ul>
+<a href="/articles/new">Add new article</a>

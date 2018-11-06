@@ -5,6 +5,7 @@ const exphbs = require('express-handlebars');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const productRouter = require('./routes/products.js')
+//const articleRouter = require('./routes/articles.js')
 const PORT = process.env.EXPRESS_CONTAINER_PORT;
 
 
@@ -16,13 +17,16 @@ app.set('view engine','.hbs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/products', productRouter);
+//app.use('/articles', articleRouter);
 app.use(express.static('public'));
 
-
 app.get('/', (req, res) => {
-//res.send('Server connected')
-res.render('products/index');
+res.redirect('/products');
 });
+
+// app.get('/', (req, res)=>{
+//   res.redirect('articles/index');
+// })
 
 app.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`)
