@@ -1,10 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const productRouter = require('./routes/products.js')
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.EXPRESS_CONTAINER_PORT;
+
 
 app.engine('.hbs', exphbs({
   defaultLayout:'main',

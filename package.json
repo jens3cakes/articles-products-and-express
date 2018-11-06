@@ -4,8 +4,10 @@
   "description": "## Tests Let the **tests drive your development** or write your tests after. The choice is up to you! As for the testing tools use:   - [mocha](https://mochajs.org/)   - [chai](https://chaijs.com/)   - [supertest](https://github.com/visionmedia/supertest)     - [supertest is built upon `superagent` so these docs will be helpful as well](https://github.com/visionmedia/superagent)",
   "main": "index.js",
   "scripts": {
-    "dev": "npx gulp & npx nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx gulp & npx nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "POSTGRES_HOSTNAME=localhost npx knex migrate:latest",
+    "seed": "POSTGRES_HOSTNAME=localhost  npx knex seed:run"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,12 @@
     "url": "https://github.com/devleague/articles-products-and-express/issues"
   },
   "homepage": "https://github.com/devleague/articles-products-and-express#readme",
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "knex": "^0.15.2"
+  },
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
